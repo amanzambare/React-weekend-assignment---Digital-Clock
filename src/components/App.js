@@ -1,15 +1,22 @@
 import React, {Component, useState} from "react";
 import '../styles/App.css';
 
-class App extends Component {
-    render() {
+function App(){
+    let time =new Date().toLocaleTimeString();
+    const[ctime,setCtime] = useState(time);
+    function update (){
+         time =new Date().toLocaleTimeString();
+        setCtime(time);
+    };
+    setInterval(update,1000);
 
-        return(
-            <>
-               
-            </>
-        )
-    }
+    return(
+        <>
+        <h1>{ctime}</h1>
+       
+
+        </>
+    )
 }
 
 
